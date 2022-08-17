@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Sathana V</a>
+  <a href="javascript:choseBox('skills');">Skills</a>
+  <a href="javascript:choseBox('project');">Projects</a>
+  <a href="javascript:choseBox('achievement');">Achievements</a>
+  <a href="javascript:choseBox('education');">Education</a>
+  <a href="javascript:choseBox('contact');">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div class="row">
+    <div class="side">
+      <h2>About Me</h2>
+      <img src="https://www.w3schools.com/html/img_chania.jpg" alt="" style="height:200px;"></img>
+      
+      <p>Developer  at quinbay , passionate in learning.</p>
+      <h3>Skills</h3>
+      <div  id="skills">
+        <p>HTML</p>
+<div class="container">
+  <div class="skills html">90%</div>
+</div>
+
+<p>CSS</p>
+<div class="container">
+  <div class="skills css">80%</div>
+</div>
+
+<p>JavaScript</p>
+<div class="container">
+  <div class="skills js">65%</div>
+</div>
+
+<p>PHP</p>
+<div class="container">
+  <div class="skills php">60%</div>
+</div>
+      </div>
+
+    </div>
+    <div class="main">
+        <h2>Projects</h2>
+        <div class="projects">
+
+            <div class="grid-container" id="project">
+                <div id="content1" onclick="onChangeContent(1,'It is a website for college which can manages students and staff details')" class="grid-item item1">College Management Systems</div>
+                <div  class="grid-item item2" id="content">It is a website for college which can manages students and staff details </div>
+                <div onclick="onChangeContent(2,'Its a site for ordering products and keeping track of them')" id="content2" class="grid-item item3">E-commerce site</div>  
+                <div onclick="onChangeContent(3,'It is a webiste to store passwords in a protected way ')" id="content3" class="grid-item item5">Password protected wallet</div>
+              </div>
+              
+        </div>
+        <br>
+      <h2>Education</h2>
+      <div class="edu" id="education">
+        <table>
+  
+            <tr>
+              <td>SSLC</td>
+              <td>Saradha Vidhayalaya Mat.Hr.Sec.School</td>
+              <td>97%</td>
+            </tr>
+            <tr>
+              <td>HSC</td>
+              <td>Saradha Vidhayalaya Mat.Hr.Sec.School</td>
+              <td>89%</td>
+            </tr>
+            <tr id="lastrow">
+              <td>BE . CSE</td>
+              <td>Kongu Engineering college</td>
+              <td>9.48 cgpa</td>
+            </tr>
+            
+          </table>
+      </div>
+      <br>
+      <h2>Achievements</h2>
+      <div class="achieve" id="achievement">
+        <ul>
+            <li>Got academic topper award from KEC</li>
+            <li style="margin-top: 4%;">Got first price in Paper Presentation held at kongu</li>
+            <li style="margin-top: 4%;">
+                Got 2 nd price in project Presentation national level symposium
+            </li>
+        </ul>
+      </div>  
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <div class="footer" id="contact">
+    <h2>sathana venkatesan</h2>
+    <p>sathanavenkatesan@gmail.com</p>
+    <p>sathanav@outlook.com</p>
+    <p>+91 7708093402</p>
+    <p>8/2840 godown street,pandiyan nagar,tirupur</p>
+
+  </div>
+  
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+function onChangeContent(index,content)
+{
+    for(var i=1;i<=3;i++)
+    {
+     var element=document.getElementById('content'+i);
+    element.style.backgroundColor='white';
+    element.style.color='black';
+    }
+    var element=document.getElementById('content'+index);
+    element.style.backgroundColor='yellowgreen';
+    element.style.color='white';
+    document.getElementById('content').innerHTML=content;
+    console.log(element);
+}
+function choseBox(content)
+{
+//     if(content=='project')
+// {
+//     var element=document.getElementsByClassName('grid-container');
+//     console.log('content')
+//     console.log(element)
+//     element.style.backgroundColor='rgb(176, 239, 228)';
+    
+
+// }
+    document.getElementById('skills').style.backgroundColor='#f1f1f1';
+    document.getElementById('project').style.backgroundColor='#f1f1f1';
+    document.getElementById('education').style.backgroundColor='white';
+    document.getElementById('achievement').style.backgroundColor='#f1f1f1';
+    document.getElementById('lastrow').style.backgroundColor='#f1f1f1';
+    document.getElementById('contact').style.backgroundColor='#f1f1f1';
+    
+    if(content=='education')
+    
+    {
+        document.getElementById('lastrow').style.backgroundColor='rgb(176, 239, 228)';
+    
+    }
+    var element=document.getElementById(content);
+    console.log(element)
+    element.style.backgroundColor='rgb(176, 239, 228)';
+    location.href='#'+content;
+}
+    </script>
+
+</body>
+</html>
